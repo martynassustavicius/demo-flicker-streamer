@@ -1,0 +1,10 @@
+/*
+!assets/
+!jni/
+!libs/
+!res/
+!src/
+!AndroidManifest.xml
+!project.properties
+!.gitattributes
+!.gitignore
