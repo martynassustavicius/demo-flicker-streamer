@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Demo Flicker Streamer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Type keyword to search...</string>
+    <string name="photo_feed">Photo feed</string>
+
+</resources>

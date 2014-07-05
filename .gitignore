@@ -1,10 +1,5 @@
-/*
-!assets/
-!jni/
-!libs/
-!res/
-!src/
-!AndroidManifest.xml
-!project.properties
-!.gitattributes
-!.gitignore
+.gradle
+/local.properties
+/.idea/workspace.xml
+.DS_Store
+/build
