@@ -21,6 +21,7 @@ import lt.smtools.utils.L;
  */
 public class Flicker {
 
+	private static final String API_KEY = "e176baac04b8e3e8c276214749f232df";
     private static Flicker instance;
 
     public static Flicker get(Context context) {
@@ -42,8 +43,8 @@ public class Flicker {
     }
     public void getGallery(String search, final GalleryCallback callback) {
         NetworkRequest nr = new NetworkRequest(
-            search == null ? "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=edddd386d179232120b943f36c7f9809&format=json&nojsoncallback=1" :
-                String.format("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8be87d1f7faf94e7c4b4c5f005f5ceee&text=%s&format=json&nojsoncallback=1", search));
+            search == null ? "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=" + API_KEY + "&format=json&nojsoncallback=1" :
+                String.format("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + API_KEY + "&text=%s&format=json&nojsoncallback=1", search));
         networkManager.executeAsync(nr, new NetworkManager.StringRunnable() {
             @Override
             public void run(String s, NetworkResponse networkResponse) {
@@ -96,7 +97,7 @@ public class Flicker {
         public void run(String owner, String avatar);
     }
     public void getOwnerNameAndAvatar(String ownerId, final ImageOwnerCallback callback) {
-        NetworkRequest nr = new NetworkRequest(String.format("https://api.flickr.com/services/rest/?method=flickr.people.getInfo&api_key=edddd386d179232120b943f36c7f9809&user_id=%s&format=json&nojsoncallback=1", ownerId));
+        NetworkRequest nr = new NetworkRequest(String.format("https://api.flickr.com/services/rest/?method=flickr.people.getInfo&api_key=" + API_KEY + "&user_id=%s&format=json&nojsoncallback=1", ownerId));
         nr.setCacheTimeout(60 * 60 * 1000);
         networkManager.executeAsync(nr, new NetworkManager.StringRunnable() {
             @Override
